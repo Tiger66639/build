@@ -1,18 +1,28 @@
 ---
 driver:
   name: vagrant
+  forward_agent: yes
   customize:
-    memory: 1024
+    cpus: 4
+    memory: 4096
+  synced_folders:
+    - ['.', '/home/vagrant/build']
 
 provisioner:
   name: chef_zero
   require_chef_omnibus: true
 
+attribute_defaults: &attribute_defaults
+  build_user:          vagrant
+  build_user_group:    vagrant
+  build_user_password: vagrant
+
 platforms:
 - name: ubuntu-12.04
-
 suites:
 - name: default
   run_list:
     - recipe[build::default]
-  attributes: { region: "example"}
+  attributes:
+    build:
+      <<: *attribute_defaults
