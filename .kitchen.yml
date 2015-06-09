@@ -26,3 +26,4 @@ suites:
   attributes:
     build:
       <<: *attribute_defaults
+      dist: 'precise'

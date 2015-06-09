@@ -1,0 +1,6 @@
+.env
+*.pyc
+config.py
+*.config.py
+fpm/build
+.kitchen/

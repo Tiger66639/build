@@ -4,6 +4,6 @@ include_recipe "apt"
 end
 
 execute "pbuilder" do
-  command "/usr/sbin/pbuilder create"
+  command "export DIST=#{node['build']['dist']} /usr/sbin/pbuilder create"
   not_if { ::File.exists?("/var/cache/pbuilder/base.tgz")}
 end
