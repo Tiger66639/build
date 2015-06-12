@@ -21,6 +21,7 @@ platforms:
 - name: ubuntu-12.04
 suites:
 - name: default
+  data_bags_path: <%= "#{ENV['CHEF_REPO']}/data_bags" %>
   run_list:
     - recipe[build::default]
   attributes:
@@ -28,6 +29,7 @@ suites:
       <<: *attribute_defaults
       dist: 'precise'
 - name: backport
+  data_bags_path: <%= "#{ENV['CHEF_REPO']}/data_bags" %>
   run_list:
     - recipe[build::backport]
   attributes:
