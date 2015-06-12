@@ -27,3 +27,10 @@ suites:
     build:
       <<: *attribute_defaults
       dist: 'precise'
+- name: backport
+  run_list:
+    - recipe[build::backport]
+  attributes:
+    build:
+      <<: *attribute_defaults
+      dist: 'precise'
