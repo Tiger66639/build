@@ -1,5 +1,6 @@
-
 include_recipe 'apt'
-include_recipe 'apt::apthttps-client'
+%w(autogen git rsync tree pbuilder debootstrap devscripts s3cmd unzip zip).each do |i|
+  package i
+end
 
-include_recipe 'build::pbuilder'
+include_recipe 'apt::apthttps-client'

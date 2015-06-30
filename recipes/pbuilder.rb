@@ -1,8 +1,4 @@
-include_recipe 'apt'
-%w(autogen git rsync tree pbuilder debootstrap devscripts s3cmd).each do |i|
-  package i
-end
-
+include_recipe 'build'
 
 execute "pbuilder" do
   command "DIST=#{node['build']['dist']} /usr/sbin/pbuilder create"

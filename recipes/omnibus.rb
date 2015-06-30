@@ -1,8 +1,4 @@
-include_recipe "apt"
-%w(autogen git rsync tree s3cmd).each do |i|
-  package i
-end
-
+include_recipe "build"
 include_recipe "rbenv::default"
 include_recipe "rbenv::ruby_build"
 
