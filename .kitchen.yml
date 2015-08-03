@@ -19,6 +19,7 @@ attribute_defaults: &attribute_defaults
 
 platforms:
 - name: ubuntu-12.04
+- name: ubuntu-14.04
 suites:
 - name: default
   data_bags_path: <%= "#{ENV['CHEF_REPO']}/data_bags" %>
