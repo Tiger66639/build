@@ -8,4 +8,3 @@ version "0.1.1"
 
 depends 'fst-apt'
 depends 'rbenv'
-depends 'omnibus'
