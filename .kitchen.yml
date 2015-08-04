@@ -37,3 +37,11 @@ suites:
     build:
       <<: *attribute_defaults
       dist: 'precise'
+- name: omnibus
+  data_bags_path: <%= "#{ENV['CHEF_REPO']}/data_bags" %>
+  run_list:
+    - recipe[build::omnibus]
+  attributes:
+    build:
+      <<: *attribute_defaults
+      dist: 'precise'

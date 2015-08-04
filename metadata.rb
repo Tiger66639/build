@@ -6,5 +6,6 @@ description      "Build. All day. Everyday!"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version "0.1.1"
 
-depends 'apt'
+depends 'fst-apt'
 depends 'rbenv'
+depends 'omnibus'
